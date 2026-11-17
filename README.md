@@ -11,7 +11,7 @@ cd Sync-List && ./install.sh
 
 `install.sh` installs `rsync` and `fzf` with pacman, apt or dnf, copies `syncls` to `~/.local/bin`, and enables an hourly systemd user timer. Make sure `~/.local/bin` is in your `PATH`.
 
-Every machine needs `rsync`, and this machine needs key-based ssh to each of them (`ssh-copy-id <machine>`). Tailscale must be running.
+Every machine needs `rsync`, and this machine needs key-based ssh to each of them. Run `syncls setup` once and it does both for every online machine. Tailscale must be running.
 
 ## Use
 
@@ -20,6 +20,7 @@ syncls          # menu: pull, jobs, status, doctor
 syncls pull     # pick machine, then folders, then files to overwrite
 syncls jobs     # run or remove the hourly jobs
 syncls status   # last result per folder
+syncls setup    # for each online machine: ask its username, copy your ssh key, install rsync there
 syncls doctor   # check tools and ssh to every online machine
 ```
 
