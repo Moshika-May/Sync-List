@@ -1,0 +1,6 @@
+[Unit]
+Description=syncls hourly pull
+
+[Service]
+Type=oneshot
+ExecStart=@BIN@ --auto
